@@ -23,7 +23,7 @@ export const defaultTheme = {
 }
 
 // This is like a secondary theme (DARK THEME)
-export const defaultDark = {
-    primary: 'black',
-    secondary: 'white'
-}
+// export const defaultDark = {
+//     primary: 'black',
+//     secondary: 'white'
+// }
