@@ -8,7 +8,7 @@ Some cool features are coming, wait for it. <br>
 
 <a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript"> </a>
 <a href="https://nodejs.org/en/" target="_blank"> <img src="https://img.shields.io/badge/-Node.js-32CD32?style=flat-square&logo=Node.js&logoColor=white" alt="Node.js"> </a>
-<a href="[https://nodejs.org/en/](https://vitejs.dev/config/)" target="_blank"> <img src="https://img.shields.io/badge/-Node.js-32CD32?style=flat-square&logo=Node.js&logoColor=white" alt="Vite"> </a>
+<a href="https://vitejs.dev/config/" target="_blank"> <img src="https://img.shields.io/badge/-Vite-32CD32?style=flat-square&logo=Node.js&logoColor=white" alt="Vite"> </a>
 
 
 ## 💻👨🏽‍💻 Autor
