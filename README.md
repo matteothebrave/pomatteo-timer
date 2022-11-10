@@ -1,7 +1,7 @@
 # Pomatteo Timer 
 The classic Pomodoro Timer now created and styled by Matteo ! <br>
 Some cool features are coming, wait for it. <br>
-<img src="./img/img.png" width="350px"></a>
+<img src="./img/img.png" width="170px"></a>
 
 @ Under Construction
 
