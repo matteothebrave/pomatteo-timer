@@ -1,0 +1,17 @@
+export const light = {
+  black: '##000000',
+  'gray-100': 'black',
+  'gray-300': '#C4C4CC',
+  'gray-400': '#8D8D99',
+  'gray-500': 'black',
+  'gray-600': 'white',
+  'gray-700': '#d2d2d2',
+  'gray-800': 'gray',
+  'gray-900': 'white',
+  'blue-300': '#42A9F3',
+  'blue-500': '#D2D2D2',
+  'blue-700': '#0D5487',
+  'red-500': '#AB222E',
+  'red-700': '#7A1921',
+  'yellow-500': '#FBA94C',
+}

@@ -1,6 +1,6 @@
 // This is created to switch between themes, light, dark, colorfull and etc..
 // Very useful because you can switch the theme directly on app.tsx after the component theme.
-export const defaultTheme = {
+export const dark = {
   white: '#FFF',
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',
