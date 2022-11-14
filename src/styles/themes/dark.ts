@@ -16,6 +16,7 @@ export const dark = {
   'red-500': '#AB222E',
   'red-700': '#7A1921',
   'yellow-500': '#FBA94C',
+  'green-500': '#00B37E'
 }
 // This is like a secondary theme (DARK THEME)
 // export const defaultDark = {
