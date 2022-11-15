@@ -1,6 +1,7 @@
 <p align="center">Pomatteo Timer  <br> 
 The classic Pomodoro Timer now created and styled by Matteo ! <br>
 Some cool features are coming, wait for it. <br>
+Challenges: White / Dark Theme | EN / PT Multi language switch. <br>
 <img src="./img/img.png" width="170px"></a> </p>
 
 <p align="center"> @ Under Construction </p>
