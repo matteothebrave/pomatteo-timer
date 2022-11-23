@@ -1,5 +1,5 @@
 import { Play } from 'phosphor-react'
-import { useState } from 'react';
+import { useForm } from 'react-hook-form'
 import {
   CountDownContainer,
   FormContainer,
@@ -14,25 +14,31 @@ import {
 // 
 
 export function Home() {
+  const { register, handleSubmit, watch } = useForm();
+
+  function handleCreateNewCycle(data: any) {
+  }
+  const task = watch('task')
+  const isSubmitDisabled = !task
+  // watching the task form
+
 
   // const [task, setTask] = useState('');
-  function handleSubmit(event) {
-        event.target.task.value
-  }
+
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit}action="">
+      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
         <FormContainer>
           <label htmlFor="">Vou trabalhar em</label>
           <TaskInput
             placeholder="Dê um nome para seu projeto"
             id="task"
             list="task-suggestions"
-            name="task"
             // onChange={(e) => setTask(e.target.value)}
             // // e = event (everytime a letter is typed or removed it refreshes the state)
             // value={task}
+            {...register('task')}
           />
 
           <datalist id="task-suggestions">
@@ -50,6 +56,7 @@ export function Home() {
             step={5}
             min={5}
             max={60}
+            {...register('minutesAmount', { valueAsNumber: true })}
           />
 
           <span>minutos</span>
@@ -62,8 +69,10 @@ export function Home() {
           <span>0</span>
         </CountDownContainer>
 
-        <StartCountdownButton disabled={!task} type="submit">
-                           {/* it is disabled when there is nothing written on task
+        <StartCountdownButton
+          disabled={isSubmitDisabled}
+          type="submit">
+          {/* it is disabled when there is nothing written on task
                           ( ! ) means when there is nothing */}
           <Play size={24} />
           Começar
