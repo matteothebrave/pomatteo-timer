@@ -22,12 +22,26 @@ const newCycleFormValidationSchema = zod.object({
     .max(60, 'O ciclo precisa ser de no máximo 60 minutos'),
 })
 
+// interface NewCycleFormData {
+//   task: string,
+//   minutesAmount: number
+// }
+// typeof (is used to use a javascript function inside of typescript)
+type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
+// this type is a typescript (INTERFACE) of validation using zod object.
+
+
+
 export function Home() {
-  const { register, handleSubmit, watch } = useForm({
-    resolver: zodResolver(),
+  const { register, handleSubmit, watch } = useForm<NewCycleFormData>({
+    resolver: zodResolver(newCycleFormValidationSchema),
+    defaultValues: {
+      task: '',
+      minutesAmount: 0,
+    }
   });
 
-  function handleCreateNewCycle(data: any) {
+  function handleCreateNewCycle(data: NewCycleFormData) {
   }
   const task = watch('task')
   const isSubmitDisabled = !task
