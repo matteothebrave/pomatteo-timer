@@ -4,7 +4,7 @@ Some cool features are coming, wait for it. <br>
 Challenges: White / Dark Theme | EN / PT Multi language switch. <br>
 <img src="./img/img.png" width="170px"></a> </p> 
 
-<p align="center"> @ Under Construction </p>
+<p align="center">  Under Construction </p>
 
 <p align="center"> ⚙🛸Tecnologias/Bibliotecas utilizadas </p> 
 
