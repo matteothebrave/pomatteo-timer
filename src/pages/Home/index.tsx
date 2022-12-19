@@ -70,8 +70,6 @@ export function Home() {
   const task = watch('task')
   const isSubmitDisabled = !task
   // watching the task form
-
-
   // const [task, setTask] = useState('');
 
 
