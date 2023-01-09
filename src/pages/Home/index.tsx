@@ -102,7 +102,7 @@ export function Home() {
             <option value="Projeto 2" />
             <option value="Projeto 3" />
             <option value="Projeto 4" />
-            <option value="Banana" />
+            <option value="Bananas" />
           </datalist>
           <label htmlFor="">durante</label>
           <MinutesAmountInput
