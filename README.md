@@ -18,4 +18,4 @@ Challenges: White / Dark Theme | EN / PT Multi language switch. <br>
 
 <p align="center"> Feito com 💜 by Matteo </p> 
 
-<p align="center"> <a href="https://www.linkedin.com/in/matheus-grossi-f-t-de-oliveira-1437b2143/" target="_blank"> <img src="https://img.shields.io/badge/Matteo-LinkedIn-blue" alt="Linked In Matteo"> </a> </p>
+<p align="center"> <a href="https://www.linkedin.com/in/matheus-grossi-f-t-de-oliveira-1437b2143/" target="_blank"> <img src="https://img.shields.io/badge/Matteo-LinkedIn-blue" alt="Linked In Matteo"> </a> </p> 
