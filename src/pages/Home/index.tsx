@@ -81,7 +81,7 @@ export function Home() {
   // watching the task form
   // const [task, setTask] = useState('');
   //->Class with diego about useEffect - Basically, it is a hook which render everytime the component is used by
-  // a dependency array or is exibited on screen. 
+  // a dependency array or is exibited on screen.  
 
   return (
     <HomeContainer>
