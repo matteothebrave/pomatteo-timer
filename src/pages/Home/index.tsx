@@ -80,7 +80,8 @@ export function Home() {
   const isSubmitDisabled = !task
   // watching the task form
   // const [task, setTask] = useState('');
-
+  //->Class with diego about useEffect - Basically, it is a hook which render everytime the component is used by
+  // a dependency array or is exibited on screen. 
 
   return (
     <HomeContainer>
