@@ -6,7 +6,7 @@ Challenges: White / Dark Theme | EN / PT Multi language switch. <br>
 
 <p align="center">  Under Construction </p>
 
-<p align="center"> ⚙🛸Tecnologias/Bibliotecas utilizadas </p> 
+<p align="center"> ⚙ Tecnologias/Bibliotecas utilizadas </p> 
 
 <p align="center"> <a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/> </a>
 <a href="https://nodejs.org/en/" target="_blank"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> </a>
@@ -14,7 +14,7 @@ Challenges: White / Dark Theme | EN / PT Multi language switch. <br>
 
 
 
-<p align="center"> 💻👨🏽‍💻 Autor </p> 
+<p align="center"> 👨🏽‍💻 Autor </p> 
 
 <p align="center"> Feito com 💜 by Matteo </p> 
 
