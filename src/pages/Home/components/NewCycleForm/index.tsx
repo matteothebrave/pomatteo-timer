@@ -1,4 +1,30 @@
-export default function NewCycleForm() {
+import { FormContainer, MinutesAmountInput, TaskInput } from "./styles";
+import * as zod from 'zod'
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+// Controlled Components or Uncontrolled Components
+// 
+
+const newCycleFormValidationSchema = zod.object({
+  task: zod.string().min(1, 'Informe a tarefa'),
+  minutesAmount: zod.number()
+    .min(1, 'O ciclo precisa ser de no mínimo 5 minutos.')
+    .max(60, 'O ciclo precisa ser de no máximo 60 minutos'),
+})
+// typeof (is used to use a javascript function inside of typescript)
+type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
+// this type is a typescript (INTERFACE) of validation using zod object.
+export function NewCycleForm() {
+  const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
+    resolver: zodResolver(newCycleFormValidationSchema),
+    defaultValues: {
+      task: '',
+      minutesAmount: 0,
+    }
+  });
+  
+
     return(
         <FormContainer>
         <label htmlFor="">Vou trabalhar em</label>
