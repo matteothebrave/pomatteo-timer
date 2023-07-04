@@ -84,7 +84,8 @@ export function Home() {
     <HomeContainer>
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
       <NewCycleForm />
-      <Countdown activeCycle={activeCycle} setCycles={setCycles}/>
+      <Countdown activeCycle={activeCycle} setCycles={setCycles} activeCycleId={activeCycleId}/>
+      {/* We are going to insert Context API */}
         
       {activeCycle ? (
         <StopCountdownButton onClick={handleInterruptCycle}type="button">
