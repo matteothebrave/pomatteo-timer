@@ -42,6 +42,7 @@ export function Home() {
     setActiveCycleId(id)
     setAmountSecondsPassed(0) // Reset to 0 whenever a new project is created.
 
+    
     reset();   // return to the defaultValues  (integration used by zod. line 38)
   }
 
