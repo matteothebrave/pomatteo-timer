@@ -1,8 +1,8 @@
 import { FormContainer, MinutesAmountInput, TaskInput } from "./styles";
 import * as zod from 'zod'
 import { useContext } from "react";
-import { CyclesContext } from "../..";
 import { useFormContext } from "react-hook-form";
+import { CyclesContext } from "../../../../contexts/CyclesContext";
 
 // Controlled Components or Uncontrolled Components
 // 
