@@ -11,8 +11,10 @@ export function App() {
   return (
     // Here is where you switch the theme from styles/themes/default.ts (DONT FORGET TO IMPORT)
     // https://www.youtube.com/watch?v=ngVU74daJ8Y Watch it to implement the Switcher
+   
     <ThemeProvider theme={dark}>
         <BrowserRouter>
+        {/* // Need to fix this */}
           <CyclesContextProvider>
         <Router />
         </CyclesContextProvider>
