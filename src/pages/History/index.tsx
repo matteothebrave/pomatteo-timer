@@ -9,7 +9,6 @@ export function History() {
     <HistoryContainer>
       <h1>Meu histórico</h1>
       <pre>
-        {JSON.stringify(cycles, null, 2)}
       </pre>
       <HistoryList>
         <table>
@@ -22,65 +21,28 @@ export function History() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="yellow">Concluido</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="yellow">Concluido</Status>
-              </td>
-            </tr>
+              {cycles.map((cycle) => {
+                return (
+                  <tr key={cycle.id}>
+                    <td>{cycle.task}</td>
+                    <td>{cycle.minutesAmount} minutos</td>
+                    <td>{cycle.startDate.toISOString()}</td>
+                    <td>
+                      {cycle.finishedDate && ( 
+                      <Status statusColor="green">Concluído</Status>
+                       )}
 
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="yellow">Concluido</Status>
-              </td>
-            </tr>
+                       {cycle.interruptedDate && ( 
+                      <Status statusColor="red">Interrompido</Status>
+                       )}
 
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="yellow">Concluido</Status>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="red">Interrompido</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="yellow">Em andamento</Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>Há dois meses </td>
-              <td>
-                <Status statusColor="green">Concluido</Status>
-              </td>
-            </tr>
+                      {!cycle.finishedDate && !cycle.interruptedDate && ( 
+                      <Status statusColor="yellow">Em andamento</Status>
+                       )}
+                    </td>
+                    </tr>
+                )
+              })}
           </tbody>
         </table>
       </HistoryList>
