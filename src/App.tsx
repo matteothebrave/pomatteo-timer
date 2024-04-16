@@ -10,17 +10,17 @@ import { CyclesContextProvider } from './contexts/CyclesContext'
 export function App() {
   return (
     // Here is where you switch the theme from styles/themes/default.ts (DONT FORGET TO IMPORT)
-    // https://www.youtube.com/watch?v=ngVU74daJ8Y Watch it to implement the Switcher
-   
+    // https://www.youtube.com/watch?v=ngVU74daJ8Y Watch it to implement the Switcher (Atualizando)
+
     <ThemeProvider theme={dark}>
-        <BrowserRouter>
+      <BrowserRouter>
         {/* // Need to fix this */}
-          <CyclesContextProvider>
-        <Router />
+        <CyclesContextProvider>
+          <Router />
         </CyclesContextProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>
-    
+
   )
 }
