@@ -1,3 +1,4 @@
+import { ActivityIcon } from "lucide-react";
 import { createContext, ReactNode, useReducer, useState } from "react";
 
 interface CreateCycleData {
@@ -33,25 +34,48 @@ interface CyclesContextProviderProps {
   children: ReactNode
 }
 
+interface CyclesState {
+  cycles: Cycle[]
+  activeCycleId: string | null
 
+}
 
 export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
-  const [cycles, dispatch] = useReducer((state: Cycle[], action: any) => {
+  const [cyclesState, dispatch] = useReducer((state: CyclesState, action: any) => {
 
     if (action.type === 'ADD_NEW_CYCLE') {
-      return [...state, action.payload.newCycle]
+      return {
+        ...state,
+        cycles: [...state.cycles, action.payload.newCycle],
+        activeCycleId: action.payload.newCycle.id,
+      }
     }
-
+    if (action.type === 'INTERRUPT_CURRENT_CYCLE') {
+      return {
+        ...state,
+        cycles: state.cycles.map((cycle) => {
+          if (cycle.id === state.activeCycleId) {
+            return { ...cycle, interruptedDate: new Date() };
+          } else {
+            return cycle;
+          }
+        }),
+        activeCycleId: null,
+      }
+    }
     return state
-  }, [])
+  }, {
+    cycles: [],
+    activeCycleId: null
+  })
 
-
-
-  const [activeCycleId, setActiveCycleId] = useState<string | null>(null);
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
+
+  const { cycles, activeCycleId } = cyclesState
   const activeCycle = cycles.find((cycle) => cycle.id == activeCycleId);
+
   function setSecondsPassed(seconds: number) {
     setAmountSecondsPassed(seconds);
   }
@@ -82,16 +106,7 @@ export function CyclesContextProvider({
         activeCycleId
       },
     })
-    // setCycles((state) =>
-    //   state.map((cycle) => {
-    //     if (cycle.id === activeCycleId) {
-    //       return { ...cycle, interruptedDate: new Date() };
-    //     } else {
-    //       return cycle;
-    //     }
-    //   }),
-    // );
-    setActiveCycleId(null);
+
   }
   function createNewCycle(data: CreateCycleData) {
     const id = String(new Date().getTime());
@@ -108,11 +123,11 @@ export function CyclesContextProvider({
       type: 'ADD_NEW_CYCLE',
       payload: {
         newCycle: newCycle,
+
       },
     })
 
     // setCycles((state) => [...state, newCycle]);
-    setActiveCycleId(id);
     setAmountSecondsPassed(0); // Reset to 0 whenever a new project is created.
     // reset()
   }
