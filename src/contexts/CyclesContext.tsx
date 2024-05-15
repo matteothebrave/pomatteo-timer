@@ -44,16 +44,14 @@ export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
   const [cyclesState, dispatch] = useReducer((state: CyclesState, action: any) => {
-
-    if (action.type === 'ADD_NEW_CYCLE') {
-      return {
-        ...state,
-        cycles: [...state.cycles, action.payload.newCycle],
-        activeCycleId: action.payload.newCycle.id,
-      }
-    }
-    if (action.type === 'INTERRUPT_CURRENT_CYCLE') {
-      return {
+    switch (action.type) {
+      case 'ADD_NEW_CYCLE':
+        return {
+          ...state,
+          cycles: [...state.cycles, action.payload.newCycle],
+          activeCycleId: action.payload.newCycle.id,
+        }
+      case 'INTERRUPT_CURRENT_CYCLE': return {
         ...state,
         cycles: state.cycles.map((cycle) => {
           if (cycle.id === state.activeCycleId) {
@@ -64,12 +62,30 @@ export function CyclesContextProvider({
         }),
         activeCycleId: null,
       }
+      case 'MARK_CURRENT_CYCLE_AS_FINISHED':
+        return {
+          ...state,
+          cycles: state.cycles.map((cycle) => {
+            if (cycle.id === state.activeCycleId) {
+              return { ...cycle, finishedDate: new Date() };
+            } else {
+              return cycle;
+            }
+          }),
+          activeCycleId: null,
+
+
+        }
+      default:
+        return state
     }
-    return state
-  }, {
-    cycles: [],
-    activeCycleId: null
-  })
+  },
+
+
+    {
+      cycles: [],
+      activeCycleId: null
+    })
 
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
 
@@ -87,15 +103,6 @@ export function CyclesContextProvider({
         activeCycleId
       },
     })
-    // setCycles((state) =>
-    //   state.map((cycle) => {
-    //     if (cycle.id === activeCycleId) {
-    //       return { ...cycle, finishedDate: new Date() };
-    //     } else {
-    //       return cycle;
-    //     }
-    //   }),
-    // );
   }
 
   function interruptCurrentCycle() {
@@ -127,9 +134,7 @@ export function CyclesContextProvider({
       },
     })
 
-    // setCycles((state) => [...state, newCycle]);
     setAmountSecondsPassed(0); // Reset to 0 whenever a new project is created.
-    // reset()
   }
 
   return (
