@@ -10,16 +10,16 @@ export function History() {
 
   return (
     <HistoryContainer>
-      <h1>Meu histórico</h1>
+      <h1>Project history</h1>
       <pre>
       </pre>
       <HistoryList>
         <table>
           <thead>
             <tr>
-              <th>Tarefa</th>
-              <th>Duração</th>
-              <th>Início</th>
+              <th>Task</th>
+              <th>Duration</th>
+              <th>Start</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -28,22 +28,22 @@ export function History() {
               return (
                 <tr key={cycle.id}>
                   <td>{cycle.task}</td>
-                  <td>{cycle.minutesAmount} minutos</td>
+                  <td>{cycle.minutesAmount} minutes</td>
                   <td>{formatDistanceToNow(cycle.startDate, {
                     addSuffix: true,
                     locale: ptBR
                   })}</td>
                   <td>
                     {cycle.finishedDate && (
-                      <Status statusColor="green">Concluído</Status>
+                      <Status statusColor="green">Concluded</Status>
                     )}
 
                     {cycle.interruptedDate && (
-                      <Status statusColor="red">Interrompido</Status>
+                      <Status statusColor="red">Interrupted</Status>
                     )}
 
                     {!cycle.finishedDate && !cycle.interruptedDate && (
-                      <Status statusColor="yellow">Em andamento</Status>
+                      <Status statusColor="yellow">In progress</Status>
                     )}
                   </td>
                 </tr>
