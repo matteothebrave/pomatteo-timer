@@ -35,14 +35,14 @@ export function AmbientSounds() {
     audioRefs.current[soundName].play();
     setCurrent(soundName);
   };
-
+   
   return (
     <div
       style={{
         display: 'flex',
         gap: '0.75rem',
         padding: '3rem',
-        // position: 'fixed',        // fixado no topo
+        // position: 'fixed',        // fixado no topoo
         top: 0,
         left: 0,
         right: 0,
